@@ -1,5 +1,5 @@
 import logging
-from typing import Optional, Callable, Tuple, Any, Dict
+from typing import Optional, Any
 from datetime import datetime
 
 from PySide6 import QtWidgets, QtNetwork, QtCore, QtGui
@@ -114,7 +114,7 @@ class MainWindow(QtWidgets.QMainWindow):
         try:
             value: Any = eval(query, {"np": np}, self.server.variable_store)
         except Exception as e:
-            value: Any = e
+            value: Exception = e
         match value:
             case list() | np.ndarray():
                 p = self.plot.plot(value, clear=True)

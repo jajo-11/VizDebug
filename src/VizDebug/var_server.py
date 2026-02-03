@@ -2,7 +2,7 @@ import logging
 from enum import Enum
 from queue import Queue
 from typing import Dict, Any, Optional, Tuple
-from json import loads, JSONDecodeError
+from orjson import loads, JSONDecodeError
 from datetime import datetime
 
 from PySide6 import QtCore, QtNetwork
